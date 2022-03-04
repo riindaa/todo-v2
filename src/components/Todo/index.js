@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { TodoForm } from "../TodoForm";
 
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+
+import "./style.scss";
+
 export const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
@@ -29,13 +34,13 @@ export const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
       </div>
       <div className="icons">
         <div onClick={() => removeTodo(todo.id)} className="delete-icon">
-          Remove
+          <DeleteIcon />
         </div>
         <div
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
           className="edit-icon"
         >
-          Edit
+          <EditIcon />
         </div>
       </div>
     </div>
