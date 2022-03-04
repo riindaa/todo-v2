@@ -1,0 +1,13 @@
+.NavigationTabs {
+  .tabs {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background: #161a2b;
+    z-index: 10;
+  }
+
+  .swipe {
+    height: 100vh;
+  }
+}

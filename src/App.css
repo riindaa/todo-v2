@@ -27,6 +27,15 @@ body {
   padding-bottom: 32px;
 }
 
+@media (max-width: 480px) {
+  .todo-app {
+    width: 100%;
+
+    margin: 0;
+    border-radius: unset;
+  }
+}
+
 h1 {
   margin: 32px 0;
   color: #fff;

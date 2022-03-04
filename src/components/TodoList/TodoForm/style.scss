@@ -41,5 +41,10 @@
       );
       padding: 16px 22px;
     }
+
+    @media (max-width: 406px) {
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
   }
 }

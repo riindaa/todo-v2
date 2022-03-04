@@ -1,12 +1,11 @@
-import { TodoList } from './components/TodoList';
+import NavigationTabs from "./components/NavigationTabs";
 
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
     <div className="todo-app">
-      <TodoList/>
-
+      <NavigationTabs />
     </div>
   );
 }
