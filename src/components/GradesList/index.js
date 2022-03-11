@@ -20,7 +20,7 @@ const GradesList = () => {
     }
 
     if (!grade.coef) {
-      grade.coef = "1";
+      grade.coef = 1;
     }
 
     const newGrades = [grade, ...grades];
@@ -29,21 +29,15 @@ const GradesList = () => {
   };
 
   const calculateAverageGrade = (grades) => {
-    let totalGradesWithCoef = [];
-    let totalCoef = [];
-
-    for (const element of grades) {
-      const calculateCoef = Number(element.grade) * Number(element.coef);
-      totalGradesWithCoef.push(calculateCoef);
-      totalCoef.push(Number(element.coef));
-    }
-
-    const sumTotalGrades = totalGradesWithCoef.reduce(
-      (prev, current) => prev + current,
+    const sumTotalGrades = grades.reduce(
+      (acc, current) => acc + current.grade * current.coef,
       0
     );
 
-    const sumTotalCoef = totalCoef.reduce((prev, current) => prev + current, 0);
+    const sumTotalCoef = grades.reduce(
+      (prev, current) => prev + current.coef,
+      0
+    );
 
     const averageGrade = sumTotalGrades / sumTotalCoef;
 

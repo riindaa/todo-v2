@@ -27,8 +27,8 @@ const GradesForm = ({ onSubmit }) => {
     onSubmit({
       id: Math.floor(Math.random() * 10000),
       course: course,
-      grade: grade,
-      coef: coef,
+      grade: Number(grade),
+      coef: Number(coef),
     });
 
     setCourse("");
