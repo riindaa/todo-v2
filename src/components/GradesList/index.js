@@ -50,6 +50,12 @@ const GradesList = () => {
     return averageGrade.toFixed(2);
   };
 
+  const removeGrade = (id) => {
+    const removeArr = [...grades].filter((grade) => grade.id !== id);
+
+    setGrades(removeArr);
+  };
+
   return (
     <div className="GradesList">
       <h1>My grades</h1>
@@ -57,7 +63,7 @@ const GradesList = () => {
         {averageGrade === "NaN" ? "-" : averageGrade}
       </div>
       <GradesForm onSubmit={addGrade} />
-      <Grades grades={grades} />
+      <Grades grades={grades} removeGrade={removeGrade} />
     </div>
   );
 };
