@@ -53,7 +53,9 @@ const GradesList = () => {
   return (
     <div className="GradesList">
       <h1>My grades</h1>
-      <div className="agerageGrade">{averageGrade}</div>
+      <div className="agerageGrade">
+        {averageGrade === "NaN" ? "-" : averageGrade}
+      </div>
       <GradesForm onSubmit={addGrade} />
       <Grades grades={grades} />
     </div>
