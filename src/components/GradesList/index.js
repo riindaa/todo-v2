@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import GradesForm from "./GradesForm";
 import Grades from "./Grades";
@@ -9,9 +9,12 @@ const GradesList = () => {
   const [grades, setGrades] = useState([]);
   const [averageGrade, setAverageGrade] = useState();
 
+  const inputRef = useRef();
+
   useEffect(() => {
     const averageGrade = calculateAverageGrade(grades);
     setAverageGrade(averageGrade);
+    inputRef.current.focus();
   }, [grades]);
 
   const addGrade = (grade) => {
@@ -56,7 +59,7 @@ const GradesList = () => {
       <div className="agerageGrade">
         {averageGrade === "NaN" ? "-" : averageGrade}
       </div>
-      <GradesForm onSubmit={addGrade} />
+      <GradesForm onSubmit={addGrade} courseInputRef={inputRef} />
       <Grades grades={grades} removeGrade={removeGrade} />
     </div>
   );

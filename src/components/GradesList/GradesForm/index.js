@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 
 import "./style.scss";
 
-const GradesForm = ({ onSubmit }) => {
+const GradesForm = ({ onSubmit, courseInputRef }) => {
   const [course, setCourse] = useState("");
   const [grade, setGrade] = useState("");
   const [coef, setCoef] = useState("");
@@ -45,6 +45,7 @@ const GradesForm = ({ onSubmit }) => {
           variant="outlined"
           onChange={getCourse}
           value={course}
+          inputRef={courseInputRef}
         />
       </div>
       <div className="textField">
