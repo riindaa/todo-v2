@@ -15,7 +15,7 @@ const GradesList = () => {
   }, [grades]);
 
   const addGrade = (grade) => {
-    if (!grade.course || /^\s*$/.test(grade.course) || !grade.grade) {
+    if (!grade.course.trim() || !grade.grade) {
       return;
     }
 
